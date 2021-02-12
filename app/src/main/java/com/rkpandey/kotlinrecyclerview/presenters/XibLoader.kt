@@ -17,25 +17,36 @@ object XibLoader {
     private var json: JSONObject? = null
 
     public fun xib(className: String): Map<String, String>? {
+        /*
+        JSON should contain a class name of the Object Presenter, and the XML name of the relative layout, layoutId for the layoutId
+         */
         json?.let {
             val item = it[className]
             val string = item as? String
             string?.let {
-                return mapOf("view" to string)
+                return mapOf("presenter" to string)
             }
             return item as? Map<String, String>
         }
         return null
     }
 
-    public fun view(className: String): RelativeLayout? {
+    public fun view(className: String): ObjectPresenterView? {
         val xib = xib(className)
         xib.let {
-            val viewClass = xib!!["view"]
-            viewClass.let {
-                val xml = xib!!["xml"]
-
+            val presenterClass = xib!!["presenter"]
+            val xml = xib!!["xml"]
+            val layoutId = xib!!["layoutId"]
+            if (presenterClass != null && xml != null && layoutId != null) {
+                val presenter = Class.forName(presenterClass!!).newInstance() as? ObjectPresenter
+                presenter?.let {
+                    val presenterView = ObjectPresenterView(context)
+                    presenterView.inflate(layoutId.toInt())
+                    presenterView.presenter = presenter
+                    return  presenterView
+                }
             }
         }
+        return  null
     }
 }

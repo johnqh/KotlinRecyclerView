@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.rkpandey.kotlinrecyclerview.R
 import com.rkpandey.kotlinrecyclerview.model.ModelObjectProtocol
+
 
 class ListPresenterAdapter(private val context: Context, private val list: List<ModelObjectProtocol>?)
     : RecyclerView.Adapter<ListPresenterAdapter.ViewHolder>() {
@@ -22,6 +21,14 @@ class ListPresenterAdapter(private val context: Context, private val list: List<
 
     // Returns the total count of items in the list
     override fun getItemCount() = list?.size ?: 0
+
+    override fun getItemViewType(position: Int): Int {
+        list?.let {
+            val item = it[position]
+            return LayoutCache.layoutId(item::class.java.simpleName) ?: 0
+        }
+        return 0
+    }
 
     // Involves populating data into the item through holder - NOT expensive
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
