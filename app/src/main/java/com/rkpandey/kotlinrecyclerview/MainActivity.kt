@@ -7,11 +7,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.rkpandey.kotlinrecyclerview.presenters.ListPresenter
+import com.rkpandey.kotlinrecyclerview.presenters.RecycleViewListPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
+    val contactPresenter = RecycleViewListPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

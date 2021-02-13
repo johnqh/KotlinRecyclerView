@@ -24,4 +24,5 @@ public interface ObservingProtocol {
         unobserve(from, keyPath)
         observe(to, keyPath, change)
     }
+
 }

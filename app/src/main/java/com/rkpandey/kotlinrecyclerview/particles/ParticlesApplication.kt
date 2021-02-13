@@ -11,9 +11,10 @@ class ParticlesApplication : Application() {
         super.onCreate()
         XibLoader.context = getApplicationContext()
 
-        val r = R.layout()
+//        val x = R()
+//        val r = R.layout()
 
-        LayoutCache.parse(r)
+        LayoutCache.parse(R.layout())
     }
 
     override fun onConfigurationChanged ( newConfig : Configuration) {

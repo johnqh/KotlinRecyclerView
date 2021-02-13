@@ -9,11 +9,11 @@ import com.rkpandey.kotlinrecyclerview.model.ModelObjectProtocol
 
 
 class ListPresenterAdapter(
-    private val context: Context,
-    private val list: List<ModelObjectProtocol>?
+    private val context: Context
 )
     : RecyclerView.Adapter<ListPresenterAdapter.ViewHolder>() {
     private val TAG = "list adapter"
+    private val list: List<ModelObjectProtocol>? = null
 
     // Returns the total count of items in the list
     override fun getItemCount() = list?.size ?: 0
@@ -57,7 +57,13 @@ class ListPresenterAdapter(
     }
 }
 
-class RecycleViewListPresenter: ListPresenter() {
+class RecycleViewListPresenter(private val context: Context): ListPresenter() {
+    private var recyclerViewAdapter = ListPresenterAdapter(context)
+    public var recyclerView: RecyclerView? = null
+        set(value) {
+
+        }
+
     override fun update(items: List<ModelObjectProtocol>?) {
         super.update(items)
     }
