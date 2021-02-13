@@ -19,6 +19,7 @@ class KVOController {
                 map[obj.uuid] = function
                 observing[keyPath] = map
             }
+            function?.invoke(keyPath, null, null)
         }
     }
 
@@ -34,9 +35,11 @@ class KVOController {
     internal fun change(keyPath: String, oldValue: Any?, newValue: Any?) {
         val observingPath: HashMap<UUID, FBKVONotificationBlock?>? = observing[keyPath]
         observingPath?.let {
-            it.forEach { (uuid, function) -> {
+            observingPath?.keys.forEach {
+                val key = it
+                val function =  observingPath!![key]
                 function?.invoke(keyPath, oldValue, newValue)
-            } }
+            }
         }
     }
 }
