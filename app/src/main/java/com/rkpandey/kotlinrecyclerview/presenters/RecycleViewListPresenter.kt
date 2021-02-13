@@ -25,9 +25,16 @@ class ListPresenterAdapter(
     override fun getItemCount() = list?.size ?: 0
 
     override fun getItemViewType(position: Int): Int {
-        list?.let {
+        list?.let { it ->
             val item = it[position]
-            return LayoutCache.layoutId(item::class.java.simpleName) ?: 0
+            val className = item::class.java.simpleName
+            val xib = XibLoader.xib(className)
+            xib?.let { it ->
+                val xml = it.get("xml") as? String
+                xml?.let {
+                    return LayoutCache.layoutId(xml) ?: 0
+                }
+            }
         }
         return 0
     }
