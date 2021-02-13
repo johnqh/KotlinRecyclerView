@@ -2,22 +2,18 @@ package com.rkpandey.kotlinrecyclerview.presenters
 
 import android.content.Context
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rkpandey.kotlinrecyclerview.model.ModelObjectProtocol
 
 
-class ListPresenterAdapter(private val context: Context, private val list: List<ModelObjectProtocol>?)
+class ListPresenterAdapter(
+    private val context: Context,
+    private val list: List<ModelObjectProtocol>?
+)
     : RecyclerView.Adapter<ListPresenterAdapter.ViewHolder>() {
     private val TAG = "list adapter"
-
-    // Usually involves inflating a layout from XML and returning the holder - THIS IS EXPENSIVE
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        Log.i(TAG, "onCreateViewHolder")
-        return ViewHolder(LayoutInflater.from(context).inflate(0, parent, false))
-    }
 
     // Returns the total count of items in the list
     override fun getItemCount() = list?.size ?: 0
@@ -28,6 +24,21 @@ class ListPresenterAdapter(private val context: Context, private val list: List<
             return LayoutCache.layoutId(item::class.java.simpleName) ?: 0
         }
         return 0
+    }
+
+    // Usually involves inflating a layout from XML and returning the holder - THIS IS EXPENSIVE
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        Log.i(TAG, "onCreateViewHolder")
+
+        val presenterView = ObjectPresenterView(context)
+        presenterView.inflate(viewType)
+        presenterView.setLayoutParams(
+            ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+        )
+        return ViewHolder(presenterView)
     }
 
     // Involves populating data into the item through holder - NOT expensive
@@ -41,6 +52,7 @@ class ListPresenterAdapter(private val context: Context, private val list: List<
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: ModelObjectProtocol) {
+            (itemView as? ObjectPresenterView)?.model = item
         }
     }
 }

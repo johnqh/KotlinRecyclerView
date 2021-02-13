@@ -2,13 +2,15 @@ package com.rkpandey.kotlinrecyclerview.presenters
 import kotlin.reflect.full.memberProperties
 import com.rkpandey.kotlinrecyclerview.model.ModelObjectProtocol
 import kotlin.reflect.full.declaredMemberProperties
+import kotlin.reflect.full.staticProperties
 
 object LayoutCache {
     private var cache = HashMap<String, Int>()
 
     public fun parse(obj: Any) {
-        obj.javaClass.kotlin.declaredMemberProperties.forEach { property ->
-            val value = property.get(obj) as? Int
+        val objClass = obj.javaClass.kotlin
+        objClass.staticProperties.forEach { property ->
+            val value = property.get() as? Int
             value?.let {
                 cache[property.name] = value
             }

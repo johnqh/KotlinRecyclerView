@@ -31,7 +31,7 @@ class ObjectPresenterView(context: Context?, attrs: AttributeSet?, defStyleAttr:
         // put all custom logic in this constructor, which always runs
     }
 
-    public fun inflate(`id`: Int) {
-        inflate(getContext(), id, this)
+    public fun inflate(layoutId: Int) {
+        inflate(getContext(), layoutId, this)
     }
 }
