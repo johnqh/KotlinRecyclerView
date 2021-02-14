@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rkpandey.kotlinrecyclerview.R
-import com.rkpandey.kotlinrecyclerview.model.ModelObjectProtocol
+import com.sudobility.particleskit.model.ModelObjectProtocol
 import kotlinx.android.synthetic.main.activity_main.*
 
 

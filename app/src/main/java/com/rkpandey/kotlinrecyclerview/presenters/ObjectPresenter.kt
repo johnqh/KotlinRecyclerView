@@ -3,7 +3,7 @@ package com.rkpandey.kotlinrecyclerview.presenters
 import android.content.Context
 import android.view.ViewGroup
 import android.widget.RelativeLayout
-import com.rkpandey.kotlinrecyclerview.model.ModelObjectProtocol
+import com.sudobility.particleskit.model.ModelObjectProtocol
 
 open class ObjectPresenter {
     public var context: Context? = null

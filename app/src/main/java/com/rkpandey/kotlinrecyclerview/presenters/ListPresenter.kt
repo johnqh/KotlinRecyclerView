@@ -2,7 +2,7 @@ package com.rkpandey.kotlinrecyclerview.presenters
 
 import com.rkpandey.kotlinrecyclerview.interactors.ListInteractor
 import com.rkpandey.kotlinrecyclerview.kvo.ObservingProtocol
-import com.rkpandey.kotlinrecyclerview.model.ModelObjectProtocol
+import com.sudobility.particleskit.model.ModelObjectProtocol
 import java.util.*
 
 open class ListPresenter: ObservingProtocol {

@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.RelativeLayout
 import android.content.Context
 import android.util.AttributeSet
-import com.rkpandey.kotlinrecyclerview.model.ModelObjectProtocol
+import com.sudobility.particleskit.model.ModelObjectProtocol
 
 
 class ObjectPresenterView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : RelativeLayout(context, attrs, defStyleAttr, defStyleRes) {

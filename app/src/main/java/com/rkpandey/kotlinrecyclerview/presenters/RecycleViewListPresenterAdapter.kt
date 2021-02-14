@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rkpandey.kotlinrecyclerview.R
-import com.rkpandey.kotlinrecyclerview.model.ModelObjectProtocol
+import com.sudobility.particleskit.model.ModelObjectProtocol
 
 class RecycleViewListPresenterAdapter(
     private val context: Context

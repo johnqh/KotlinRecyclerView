@@ -1,7 +1,7 @@
 package com.rkpandey.kotlinrecyclerview.presenters
 import android.content.Context
 import kotlin.reflect.full.memberProperties
-import com.rkpandey.kotlinrecyclerview.model.ModelObjectProtocol
+import com.sudobility.particleskit.model.ModelObjectProtocol
 import com.rkpandey.kotlinrecyclerview.particles.ParticlesApplication
 import kotlin.reflect.full.declaredMemberProperties
 import kotlin.reflect.full.staticProperties
