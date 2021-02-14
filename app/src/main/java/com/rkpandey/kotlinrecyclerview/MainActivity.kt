@@ -23,23 +23,23 @@ class MainActivity : AppCompatActivity() {
         Log.i(TAG, "onCreate")
 
         val contactList = mutableListOf<Contact>()
-        val adapter = ContactAdapter(this, contactList)
-        rvContacts.adapter = adapter
-        rvContacts.layoutManager = LinearLayoutManager(this)
+//        val adapter = ContactAdapter(this, contactList)
+//        rvContacts.adapter = adapter
+//        rvContacts.layoutManager = LinearLayoutManager(this)
 
-//        contactPresenter.recyclerView = rvContacts
-//        var listInteractor = ListInteractor()
+        contactPresenter.recyclerView = rvContacts
+        var listInteractor = ListInteractor()
 
         val model = ViewModelProviders.of(this)[MainActivityViewModel::class.java]
         model.getContacts().observe(this, Observer { contacts ->
             // Update the UI with the new contacts
-            contactList.clear()
-            contactList.addAll(contacts)
-            adapter.notifyDataSetChanged()
+//            contactList.clear()
+//            contactList.addAll(contacts)
+//            adapter.notifyDataSetChanged()
 
-//            listInteractor.list = contacts
+            listInteractor.list = contacts
         })
-//        contactPresenter.listInteractor = listInteractor
+        contactPresenter.listInteractor = listInteractor
 
 
         model.getIsRefreshing().observe(this, Observer { isRefreshing ->

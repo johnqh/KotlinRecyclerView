@@ -1,6 +1,6 @@
 {
   "Contact": {
-    "presenter": "ContactPresenter",
+    "presenter": "com.rkpandey.kotlinrecyclerview.ContactPresenter",
     "xml": "item_contact"
   }
 }

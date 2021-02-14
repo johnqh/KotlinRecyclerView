@@ -19,7 +19,9 @@ class ObjectPresenterView(context: Context?, attrs: AttributeSet?, defStyleAttr:
         set(value) {
             presenter?.model = null
             presenter?.view = null
+            presenter?.context = null
             field = value
+            presenter?.context = context
             presenter?.view = this
             presenter?.model = model
         }

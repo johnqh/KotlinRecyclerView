@@ -24,6 +24,8 @@ class ContactPresenter: ObjectPresenter() {
     override fun updateSelf() {
         tvName?.text = contact?.name
         tvAge?.text = "Age: ${contact?.age}"
-//        Glide.with(context).load(contact?.imageUrl).into(ivProfile)
+        if (context != null && ivProfile != null) {
+            Glide.with(context!!).load(contact?.imageUrl).into(ivProfile!!)
+        }
     }
 }

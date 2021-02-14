@@ -69,7 +69,19 @@ class RecycleViewListPresenterAdapter(
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: ModelObjectProtocol) {
-            (itemView as? ObjectPresenterView)?.model = item
+            val view = itemView as? ObjectPresenterView
+            view?.let { view ->
+                val className = item::class.java.simpleName
+                val xib = XibLoader.xib(className)
+                xib?.let { it ->
+                    val presenterClass = it.get("presenter") as? String
+                    presenterClass?.let {
+                        val presenter = Class.forName(presenterClass).newInstance() as? ObjectPresenter
+                        view.presenter = presenter
+                    }
+                }
+                view.model = item
+            }
         }
     }
 }
