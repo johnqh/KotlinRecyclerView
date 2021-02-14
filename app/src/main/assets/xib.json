@@ -1,6 +1,6 @@
 {
   "Contact": {
-    "presenter": "ObjectPresenter",
+    "presenter": "ContactPresenter",
     "xml": "item_contact"
   }
 }

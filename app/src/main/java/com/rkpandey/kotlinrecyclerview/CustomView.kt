@@ -24,7 +24,7 @@ class CustomView(
             contact?.let { contact ->
                 tvName.text = contact.name
                 tvAge.text = "Age: ${contact.age}"
-                Glide.with(context).load(contact.imageUrl).into(ivProfile)
+//                Glide.with(context).load(contact.imageUrl).into(ivProfile)
             }
         }
     private val ivProfile: ImageView
