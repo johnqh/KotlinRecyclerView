@@ -44,7 +44,7 @@ class RecycleViewListPresenterAdapter(
 
         if (viewType != 0) {
             val presenterView = ObjectPresenterView(context)
-            presenterView.inflate(viewType)
+            presenterView.inflate(R.layout.item_contact)
             presenterView.setLayoutParams(
                 ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
