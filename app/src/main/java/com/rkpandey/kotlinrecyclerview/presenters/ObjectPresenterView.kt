@@ -1,6 +1,5 @@
 package com.rkpandey.kotlinrecyclerview.presenters
 
-import android.R
 import android.view.View
 import android.widget.RelativeLayout
 import android.content.Context
