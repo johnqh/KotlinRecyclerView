@@ -1,4 +1,4 @@
-package com.rkpandey.kotlinrecyclerview.interactors
+package com.sudobility.particleskit.interactor
 
 import com.sudobility.utilities.kvo.NSObject
 import com.sudobility.particleskit.model.ModelObjectProtocol

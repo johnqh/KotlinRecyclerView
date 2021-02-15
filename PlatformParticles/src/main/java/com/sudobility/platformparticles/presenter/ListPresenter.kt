@@ -1,6 +1,6 @@
-package com.rkpandey.kotlinrecyclerview.presenters
+package com.sudobility.platformparticles.presenter
 
-import com.rkpandey.kotlinrecyclerview.interactors.ListInteractor
+import com.sudobility.particleskit.interactor.ListInteractor
 import com.sudobility.utilities.kvo.ObservingProtocol
 import com.sudobility.particleskit.model.ModelObjectProtocol
 import java.util.*

@@ -1,19 +1,18 @@
-package com.rkpandey.kotlinrecyclerview.presenters
+package com.sudobility.platformparticles.presenter
 
 import android.content.Context
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.rkpandey.kotlinrecyclerview.R
 import com.sudobility.particleskit.model.ModelObjectProtocol
+import com.sudobility.platformparticles.cache.LayoutCache
+import com.sudobility.platformparticles.xib.XibLoader
 
 class RecycleViewListPresenterAdapter(
     private val context: Context
 )
     : RecyclerView.Adapter<RecycleViewListPresenterAdapter.ViewHolder>() {
-    private val TAG = "list adapter"
     public var list: List<ModelObjectProtocol>? = null
         set(value) {
             field = value
@@ -40,8 +39,6 @@ class RecycleViewListPresenterAdapter(
 
     // Usually involves inflating a layout from XML and returning the holder - THIS IS EXPENSIVE
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        Log.i(TAG, "onCreateViewHolder")
-
         if (viewType != 0) {
             val presenterView = ObjectPresenterView(context)
             presenterView.inflate(viewType)
@@ -60,7 +57,6 @@ class RecycleViewListPresenterAdapter(
 
     // Involves populating data into the item through holder - NOT expensive
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.i(TAG, "onBindViewHolder at position $position")
         list?.let {
             val item = it[position]
             holder.bind(item)

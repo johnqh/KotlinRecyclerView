@@ -1,11 +1,10 @@
-package com.rkpandey.kotlinrecyclerview.particles
+package com.sudobility.platformparticles.app
 import android.app.Application
-import android.content.Context
 import android.content.res.Configuration
-import com.rkpandey.kotlinrecyclerview.presenters.LayoutCache
-import com.rkpandey.kotlinrecyclerview.presenters.XibLoader
+import com.sudobility.platformparticles.cache.LayoutCache
+import com.sudobility.platformparticles.xib.XibLoader
 
-class ParticlesApplication : Application() {
+open class ParticlesApplication : Application() {
     init {
         instance = this
     }

@@ -1,4 +1,4 @@
-package com.rkpandey.kotlinrecyclerview.presenters
+package com.sudobility.platformparticles.presenter
 
 import android.content.Context
 import android.view.ViewGroup

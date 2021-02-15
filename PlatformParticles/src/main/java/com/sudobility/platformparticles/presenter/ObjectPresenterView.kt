@@ -1,6 +1,5 @@
-package com.rkpandey.kotlinrecyclerview.presenters
+package com.sudobility.platformparticles.presenter
 
-import android.view.View
 import android.widget.RelativeLayout
 import android.content.Context
 import android.util.AttributeSet
