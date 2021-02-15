@@ -1,4 +1,4 @@
-package com.rkpandey.kotlinrecyclerview.kvo
+package com.sudobility.utilities.kvo
 
 import java.util.*
 import kotlin.collections.HashMap
