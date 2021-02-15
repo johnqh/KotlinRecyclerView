@@ -1,10 +1,8 @@
 package com.rkpandey.kotlinrecyclerview.presenters
 
-import com.rkpandey.kotlinrecyclerview.json.JsonLoader
+import com.sudobility.utilities.json.JsonLoader
 import org.json.JSONObject
 import android.content.Context
-import android.text.Layout
-import android.widget.RelativeLayout
 
 object XibLoader {
     public var context: Context? = null

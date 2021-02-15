@@ -1,4 +1,4 @@
-package com.rkpandey.kotlinrecyclerview.json
+package com.sudobility.utilities.json
 
 import android.content.Context
 import org.json.JSONObject
