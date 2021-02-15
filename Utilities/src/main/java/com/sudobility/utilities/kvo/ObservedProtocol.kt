@@ -1,4 +1,4 @@
-package com.rkpandey.kotlinrecyclerview.kvo
+package com.sudobility.utilities.kvo
 
 public interface ObservedProtocol {
     public var _kvoController: KVOController?

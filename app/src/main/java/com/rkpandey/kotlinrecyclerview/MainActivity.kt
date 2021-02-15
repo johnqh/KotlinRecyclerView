@@ -5,11 +5,8 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.rkpandey.kotlinrecyclerview.interactors.ListInteractor
-import com.rkpandey.kotlinrecyclerview.presenters.ListPresenter
-import com.rkpandey.kotlinrecyclerview.presenters.RecycleViewListPresenter
+import com.sudobility.particleskit.interactor.ListInteractor
+import com.sudobility.platformparticles.presenter.RecycleViewListPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
 private const val TAG = "MainActivity"

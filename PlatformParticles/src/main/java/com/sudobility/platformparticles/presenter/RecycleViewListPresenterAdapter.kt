@@ -1,13 +1,12 @@
-package com.rkpandey.kotlinrecyclerview.presenters
+package com.sudobility.platformparticles.presenter
 
 import android.content.Context
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.rkpandey.kotlinrecyclerview.R
 import com.sudobility.particleskit.model.ModelObjectProtocol
+import com.sudobility.platformparticles.xml.XibLoader
 
 class RecycleViewListPresenterAdapter(
     private val context: Context
@@ -44,7 +43,7 @@ class RecycleViewListPresenterAdapter(
 
         if (viewType != 0) {
             val presenterView = ObjectPresenterView(context)
-            presenterView.inflate(R.layout.item_contact)
+            presenterView.inflate(viewType)
             presenterView.setLayoutParams(
                 ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,

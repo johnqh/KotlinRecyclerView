@@ -2,9 +2,8 @@ package com.rkpandey.kotlinrecyclerview.particles
 import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
-import com.rkpandey.kotlinrecyclerview.R
-import com.rkpandey.kotlinrecyclerview.presenters.LayoutCache
-import com.rkpandey.kotlinrecyclerview.presenters.XibLoader
+import com.sudobility.platformparticles.xml.XibLoader
+import com.sudobility.platformparticles.presenter.LayoutCache
 
 class ParticlesApplication : Application() {
     init {

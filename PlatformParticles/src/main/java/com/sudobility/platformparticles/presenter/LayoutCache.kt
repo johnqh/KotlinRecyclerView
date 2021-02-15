@@ -1,9 +1,5 @@
-package com.rkpandey.kotlinrecyclerview.presenters
-import android.content.Context
-import kotlin.reflect.full.memberProperties
-import com.sudobility.particleskit.model.ModelObjectProtocol
+package com.sudobility.platformparticles.presenter
 import com.rkpandey.kotlinrecyclerview.particles.ParticlesApplication
-import kotlin.reflect.full.declaredMemberProperties
 import kotlin.reflect.full.staticProperties
 
 object LayoutCache {

@@ -3,7 +3,7 @@ package com.rkpandey.kotlinrecyclerview
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.rkpandey.kotlinrecyclerview.presenters.ObjectPresenter
+import com.sudobility.platformparticles.presenter.ObjectPresenter
 
 class ContactPresenter: ObjectPresenter() {
     private var ivProfile: ImageView? = null

@@ -1,10 +1,6 @@
-package com.rkpandey.kotlinrecyclerview.interactors
+package com.sudobility.particleskit.interactor
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.rkpandey.kotlinrecyclerview.kvo.NSObject
+import com.sudobility.utilities.kvo.NSObject
 import com.sudobility.particleskit.model.ModelObjectProtocol
 
 class ListInteractor: NSObject(), ModelObjectProtocol {
